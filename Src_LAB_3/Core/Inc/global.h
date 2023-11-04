@@ -16,4 +16,17 @@
 
 extern int status;
 
+extern int time_light1;
+extern int time_light2;
+
+extern const int MAX_LED;
+extern int index_led;
+extern int led_buffer[4];
+
+void display_7SEG(int num);
+void clearALL_7SEG();
+void update7SEG( int index);
+void updateClockBuffer();
+void clearALL_light();
+
 #endif /* INC_GLOBAL_H_ */

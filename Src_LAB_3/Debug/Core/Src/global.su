@@ -1,0 +1,5 @@
+global.c:20:7:display_7SEG	16	static
+global.c:115:7:update7SEG	16	static
+global.c:136:7:updateClockBuffer	4	static
+global.c:155:7:clearALL_light	8	static
+global.c:164:7:clearAll_7SEG	8	static
