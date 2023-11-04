@@ -24,7 +24,7 @@ extern int index_led;
 extern int led_buffer[4];
 
 void display_7SEG(int num);
-void clearALL_7SEG();
+void clearAll_7SEG();
 void update7SEG( int index);
 void updateClockBuffer();
 void clearALL_light();

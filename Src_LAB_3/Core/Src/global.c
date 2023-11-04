@@ -8,13 +8,13 @@
 #include "global.h"
 #include "main.h"
 
-int status = 0;
+int status = 1;
 
 int time_light1 =  5;
 int time_light2 = 3;
 
 const int MAX_LED = 4;
-int index_led = 0;
+int index_led;
 int led_buffer[4] = {0, 5, 0, 3};
 
 	void display_7SEG(int num){
@@ -115,19 +115,19 @@ int led_buffer[4] = {0, 5, 0, 3};
 	void update7SEG( int index) {
 		switch (index) {
 		case 0:
-			clearALL_7SEG();
+			clearAll_7SEG();
 			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
 			break;
 		case 1:
-			clearALL_7SEG();
+			clearAll_7SEG();
 			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, RESET);
 			break;
 		case 2:
-			clearALL_7SEG();
+			clearAll_7SEG();
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, RESET);
 			break;
 		case 3:
-			clearALL_7SEG();
+			clearAll_7SEG();
 			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, RESET);
 			break;
 		}
