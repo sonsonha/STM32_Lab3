@@ -1,0 +1,5 @@
+update_led.c:21:7:display7SEG	16	static
+update_led.c:116:7:update7SEG	16	static
+update_led.c:137:7:updateClockBuffer	4	static
+update_led.c:156:7:clearAll_7SEG	8	static
+update_led.c:163:7:clearALL_light	8	static
