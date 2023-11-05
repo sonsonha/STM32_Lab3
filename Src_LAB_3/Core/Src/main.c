@@ -22,8 +22,9 @@
 #include "button.h"
 #include "fms_trafficLight.h"
 #include "software_timer.h"
-#include "global.h"
 #include "timer.h"
+#include "global.h"
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -80,9 +81,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  setTimer1(100);
-  status = INIT;
-  setTimer2(25);
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -101,24 +100,26 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  status = INIT;
+//  setTimer2(25);
+
   while (1)
   {
-	  if(timer1_flag == 1){
-		  setTimer1(100);
 		  fmsRun();
-	  }
-	  if(timer2_flag == 1){
-		  setTimer2(25);
-//			updateClockBuffer();
-			if(index_led < MAX_LED){
-				update7SEG(index_led);
-//				display_7SEG(led_buffer[index_led]);
-				index_led++;
-			}
-			if(index_led >= MAX_LED){
-				index_led = 0;
-			}
-	  }
+
+//	  if(timer2_flag == 1){
+//		  setTimer2(25);
+////			updateClockBuffer();
+//			if(index_led < MAX_LED){
+//				update7SEG(index_led);
+////				display_7SEG(led_buffer[index_led]);
+//				index_led++;
+//			}
+//			if(index_led >= MAX_LED){
+//				index_led = 0;
+//			}
+//	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -257,10 +258,10 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-//void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-//	timerRun();
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	timerRun();
 //	getKeyInput();
-//}
+}
 
 /* USER CODE END 4 */
 

@@ -14,7 +14,7 @@ int time_light1 =  5;
 int time_light2 = 3;
 
 const int MAX_LED = 4;
-int index_led;
+int index_led = 0;
 int led_buffer[4] = {0, 5, 0, 3};
 
 	void display_7SEG(int num){
@@ -154,11 +154,11 @@ int led_buffer[4] = {0, 5, 0, 3};
 
 	void clearALL_light(){
 		HAL_GPIO_WritePin(RED_LED1_GPIO_Port, RED_LED1_Pin, SET);
-		HAL_GPIO_WritePin(AMBER_LED1_GPIO_Port, RED_LED1_Pin, SET);
-		HAL_GPIO_WritePin(GREEN_LED1_GPIO_Port, RED_LED1_Pin, SET);
-		HAL_GPIO_WritePin(RED_LED2_GPIO_Port, RED_LED1_Pin, SET);
-		HAL_GPIO_WritePin(AMBER_LED2_GPIO_Port, RED_LED1_Pin, SET);
-		HAL_GPIO_WritePin(GREEN_LED2_GPIO_Port, RED_LED1_Pin, SET);
+		HAL_GPIO_WritePin(AMBER_LED1_GPIO_Port, AMBER_LED1_Pin, SET);
+		HAL_GPIO_WritePin(GREEN_LED1_GPIO_Port, GREEN_LED1_Pin, SET);
+		HAL_GPIO_WritePin(RED_LED2_GPIO_Port, RED_LED2_Pin, SET);
+		HAL_GPIO_WritePin(AMBER_LED2_GPIO_Port, AMBER_LED2_Pin, SET);
+		HAL_GPIO_WritePin(GREEN_LED2_GPIO_Port, GREEN_LED2_Pin, SET);
 	}
 
 	void clearAll_7SEG(){
