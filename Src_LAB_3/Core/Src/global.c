@@ -10,11 +10,12 @@
 
 int status = 1;
 
-int time_light1 =  5;
-int time_light2 = 3;
 
 const int MAX_LED = 4;
 int index_led = 0;
+
+int time_light1;
+int time_light2;
 int led_buffer[4] = {0, 5, 0, 3};
 
 	void display_7SEG(int num){
