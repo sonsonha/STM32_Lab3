@@ -10,7 +10,35 @@
 #include "global.h"
 #include "software_timer.h"
 
-int light_flag = 0;
+
+
+int flag = 0;
+
+//void led_7SEG_Run(){
+//	  if(timer3_flag == 1){
+//		  time_light1--;
+//		  time_light2--;
+////		  (status == RED1_AMBER2)
+//		  if(status == RED1_AMBER2){
+//			  time_light2 = 2;
+//		  }
+//		  if((status == GREEN1_RED2)){
+//			  time_light1 = 3;
+//			  time_light2 = 5;
+//		  }
+//		  if((status == AMBER1_RED2)){
+//			  time_light1 = 2;
+//		  }
+//		  if((status == RED1_GREEN2)){
+//			  time_light1 = 5;
+//			  time_light2 = 3;
+//		  }
+//
+//		  updateClockBuffer();
+//		  setTimer3(1000);
+//	  }
+//}
+
 
 void fmsRun(){
 	if(timer2_flag == 1){
@@ -18,7 +46,7 @@ void fmsRun(){
 			setTimer2(250);
 			display_7SEG(led_buffer[index_led]);
 			update7SEG(index_led);
-//			updateClockBuffer();
+			updateClockBuffer();
 			index_led++;
 			}
 		else {
@@ -29,20 +57,24 @@ void fmsRun(){
 	  if(timer3_flag == 1){
 		  time_light1--;
 		  time_light2--;
-		  if((status == RED1_GREEN2) && (time_light2 <= 0)){
+//		  (status == RED1_AMBER2)
+		  if((time_light2 <= 0) && (time_light1 > 0)){
 			  time_light2 = 2;
 		  }
-		  if((status == RED1_AMBER2)){
+		  if((time_light1 <= 0) && (time_light2 <= 0) && (flag == 0)){
+			  flag = 1;
 			  time_light1 = 3;
 			  time_light2 = 5;
 		  }
-		  if((status == GREEN1_RED2)){
+		  if((time_light1 <= 0) && (time_light2 > 0)){
 			  time_light1 = 2;
 		  }
-		  if((status == AMBER1_RED2)){
+		  if((time_light1 <= 0) && (time_light2 <= 0) && (flag == 1)){
+			  flag = 0;
 			  time_light1 = 5;
 			  time_light2 = 3;
 		  }
+
 		  updateClockBuffer();
 		  setTimer3(1000);
 	  }
@@ -58,8 +90,9 @@ void fmsRun(){
 		HAL_GPIO_WritePin(AMBER_LED1_GPIO_Port, AMBER_LED1_Pin, SET);
 		HAL_GPIO_WritePin(RED_LED1_GPIO_Port, RED_LED1_Pin, RESET);
 		HAL_GPIO_WritePin(GREEN_LED2_GPIO_Port, GREEN_LED2_Pin, RESET);
+
+//		if(timer1_flag == 1)
 		if(timer1_flag == 1){
-			light_flag = 1;
 			setTimer1(2000);
 			status = RED1_AMBER2;
 //			updateClockBuffer();

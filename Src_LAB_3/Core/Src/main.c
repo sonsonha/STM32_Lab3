@@ -109,7 +109,6 @@ int main(void)
   while (1)
   {
 		  fmsRun();
-
 //	  if(timer2_flag == 1){
 //		  setTimer2(25);
 ////			updateClockBuffer();

@@ -10,4 +10,6 @@
 
 void fmsRun();
 
+void led_7SEG_Run();
+
 #endif /* INC_FMS_TRAFFICLIGHT_H_ */
