@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00016a7a  00000000  00000000  0002bec0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000b112  00000000  00000000  0004293a  2**0
+ 17 .debug_line   0000b110  00000000  00000000  0004293a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00082347  00000000  00000000  0004da4c  2**0
+ 18 .debug_str    00082347  00000000  00000000  0004da4a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000cfd93  2**0
+ 19 .comment      00000053  00000000  00000000  000cfd91  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002824  00000000  00000000  000cfde8  2**2
+ 20 .debug_frame  00002824  00000000  00000000  000cfde4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -451,11 +451,7 @@ void fmsRun(){
  800039e:	e000      	b.n	80003a2 <fmsRun+0x232>
 		break;
  80003a0:	bf00      	nop
-//		index_led++;
-//	}
-//	if(index_led >= MAX_LED){
-//		index_led = 0;
-//	}
+	}
 }
  80003a2:	bf00      	nop
  80003a4:	bd80      	pop	{r7, pc}

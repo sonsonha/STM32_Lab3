@@ -135,15 +135,6 @@ void fmsRun(){
 	default:
 		break;
 	}
-//	updateClockBuffer();
-//	if(index_led < MAX_LED){
-//		update7SEG(index_led);
-//		display_7SEG(led_buffer[index_led]);
-//		index_led++;
-//	}
-//	if(index_led >= MAX_LED){
-//		index_led = 0;
-//	}
 }
 
 
