@@ -38,7 +38,9 @@ void fms_manual_run() {
 			if(isButton2_pressed() == 1){
 				temp_duration_red = temp_duration_red - 1000;
 			}
-			check_button3();
+			if(check_valid_duration()){
+			   check_button3();
+			}
 		}
 		break;
 	case MODE_3:
@@ -54,7 +56,9 @@ void fms_manual_run() {
 			if(isButton2_pressed() == 1){
 				temp_duration_amber = temp_duration_amber - 1000;
 			}
-			check_button3();
+			if(check_valid_duration()){
+			   check_button3();
+			}
 		}
 		break;
 	case MODE_4:
@@ -70,7 +74,9 @@ void fms_manual_run() {
 			if(isButton2_pressed() == 1){
 				temp_duration_green = temp_duration_green - 1000;
 			}
-			check_button3();
+			if(check_valid_duration()){
+			   check_button3();
+			}
 		}
 		break;
 	default:

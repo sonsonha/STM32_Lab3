@@ -108,7 +108,7 @@ void fmsRun(){
 		HAL_GPIO_WritePin(GREEN_LED2_GPIO_Port, GREEN_LED2_Pin, SET);
 		HAL_GPIO_WritePin(AMBER_LED2_GPIO_Port,  AMBER_LED2_Pin, RESET);
 		if(timer1_flag == 1){
-			setTimer1(3000);
+			setTimer1(duration_green);
 			status = GREEN1_RED2;
 //			updateClockBuffer();
 		}
@@ -119,7 +119,7 @@ void fmsRun(){
 		HAL_GPIO_WritePin(GREEN_LED1_GPIO_Port, GREEN_LED1_Pin, RESET);
 		HAL_GPIO_WritePin(RED_LED2_GPIO_Port, RED_LED2_Pin, RESET);
 		if(timer1_flag == 1){
-			setTimer1(2000);
+			setTimer1(duration_amber);
 			status = AMBER1_RED2;
 //			updateClockBuffer();
 		}
@@ -128,7 +128,7 @@ void fmsRun(){
 		HAL_GPIO_WritePin(GREEN_LED1_GPIO_Port, GREEN_LED1_Pin, SET);
 		HAL_GPIO_WritePin(AMBER_LED1_GPIO_Port, AMBER_LED1_Pin, RESET);
 		if(timer1_flag == 1){
-			setTimer1(3000);
+			setTimer1(duration_green);
 			status = RED1_GREEN2;
 //			updateClockBuffer();
 		}
