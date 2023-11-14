@@ -5,6 +5,12 @@
  *      Author: sonha
  */
 
+#include "main.h"
+#include "software_timer.h"
+#include "fms_manual.h"
+#include "fms_trafficLight.h"
+#include "button.h"
+
 #ifndef INC_GLOBAL_H_
 #define INC_GLOBAL_H_
 
@@ -13,6 +19,10 @@
 #define RED1_AMBER2 3
 #define GREEN1_RED2 4
 #define AMBER1_RED2 5
+
+#define NORMAL_MODE 22
+#define MODE_2 23
+#define MAN_AMBER 24
 
 extern int status;
 

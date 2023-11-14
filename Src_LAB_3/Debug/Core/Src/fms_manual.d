@@ -1,5 +1,5 @@
-Core/Src/fms_trafficLight.o: ../Core/Src/fms_trafficLight.c \
- ../Core/Inc/fms_trafficLight.h ../Core/Inc/main.h \
+Core/Src/fms_manual.o: ../Core/Src/fms_manual.c ../Core/Inc/fms_manual.h \
+ ../Core/Inc/global.h ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -24,12 +24,12 @@ Core/Src/fms_trafficLight.o: ../Core/Src/fms_trafficLight.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- ../Core/Inc/global.h ../Core/Inc/main.h ../Core/Inc/software_timer.h \
- ../Core/Inc/fms_manual.h ../Core/Inc/global.h \
- ../Core/Inc/fms_trafficLight.h ../Core/Inc/button.h \
- ../Core/Inc/software_timer.h
+ ../Core/Inc/software_timer.h ../Core/Inc/fms_manual.h \
+ ../Core/Inc/fms_trafficLight.h ../Core/Inc/button.h
 
-../Core/Inc/fms_trafficLight.h:
+../Core/Inc/fms_manual.h:
+
+../Core/Inc/global.h:
 
 ../Core/Inc/main.h:
 
@@ -81,18 +81,10 @@ Core/Src/fms_trafficLight.o: ../Core/Src/fms_trafficLight.c \
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 
-../Core/Inc/global.h:
-
-../Core/Inc/main.h:
-
 ../Core/Inc/software_timer.h:
 
 ../Core/Inc/fms_manual.h:
 
-../Core/Inc/global.h:
-
 ../Core/Inc/fms_trafficLight.h:
 
 ../Core/Inc/button.h:
-
-../Core/Inc/software_timer.h:

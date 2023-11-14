@@ -97,6 +97,11 @@ void fmsRun(){
 			status = RED1_AMBER2;
 //			updateClockBuffer();
 		}
+
+		if(isButton1_pressed() == 1) {
+			status = NORMAL_MODE;
+			setTimer1(10000); // if button not pressed in 10s, status = auto
+		}
 		break;
 	case RED1_AMBER2:
 		HAL_GPIO_WritePin(GREEN_LED2_GPIO_Port, GREEN_LED2_Pin, SET);

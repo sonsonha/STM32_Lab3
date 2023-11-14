@@ -1,4 +1,5 @@
 "./Core/Src/button.o"
+"./Core/Src/fms_manual.o"
 "./Core/Src/fms_trafficLight.o"
 "./Core/Src/global.o"
 "./Core/Src/input_reading.o"
