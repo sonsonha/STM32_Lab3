@@ -54,4 +54,6 @@ void blink_amber_led_2hz();
 
 void check_button3();
 
+int check_valid_duration();
+
 #endif /* INC_GLOBAL_H_ */

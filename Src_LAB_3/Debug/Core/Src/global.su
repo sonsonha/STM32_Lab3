@@ -7,3 +7,4 @@ global.c:180:7:blink_red_led_2hz	8	static
 global.c:188:7:blink_green_led_2hz	8	static
 global.c:196:7:blink_amber_led_2hz	8	static
 global.c:204:7:check_button3	8	static
+global.c:212:6:check_valid_duration	16	static

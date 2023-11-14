@@ -209,5 +209,16 @@ int led_buffer[4] = {0, 5, 0, 3};
 		}
 	}
 
+	int check_valid_duration(){
+		int total = duration_amber + duration_green;
+		if(!(duration_red = total)){
+			return 0;
+		}
+		return 1;
+	}
+
+
+
+
 
 
