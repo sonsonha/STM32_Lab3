@@ -56,8 +56,14 @@ void fmsRun(){
 	}
 
 	  if(timer3_flag == 1){
-		  time_light1--;
-		  time_light2--;
+		  if(!isButton1_pressed()){
+			  time_light1--;
+			  time_light2--;
+		  }
+		  else{
+			  time_light1--;
+			  time_light2 = 2;
+		  }
 //		  (status == RED1_AMBER2)
 		  if((time_light2 <= 0) && (time_light1 > 0)){
 			  time_light2 = 2;

@@ -11,10 +11,12 @@
 void fms_manual_run() {
 	switch(status) {
 	case NORMAL_MODE:
-		HAL_GPIO_WritePin(RED_LED2_GPIO_Port, RED_LED2_Pin, SET);
-		HAL_GPIO_WritePin(AMBER_LED1_GPIO_Port, AMBER_LED1_Pin, SET);
 		HAL_GPIO_WritePin(RED_LED1_GPIO_Port, RED_LED1_Pin, RESET);
+		HAL_GPIO_WritePin(GREEN_LED1_GPIO_Port, GREEN_LED1_Pin, SET);
+		HAL_GPIO_WritePin(AMBER_LED1_GPIO_Port, AMBER_LED1_Pin, SET);
+		HAL_GPIO_WritePin(RED_LED2_GPIO_Port, RED_LED2_Pin, SET);
 		HAL_GPIO_WritePin(GREEN_LED2_GPIO_Port, GREEN_LED2_Pin, RESET);
+		HAL_GPIO_WritePin(AMBER_LED2_GPIO_Port,  AMBER_LED2_Pin, SET);
 
 		if(timer1_flag == 1) {
 			status = RED1_GREEN2;
@@ -27,6 +29,7 @@ void fms_manual_run() {
 		break;
 	case MODE_2:
 		time_light2 = 2; // Display mode in 2
+		updateClockBuffer();
 		blink_red_led_2hz();
 		if(timer1_flag == 1) {
 			status = RED1_GREEN2;
@@ -45,6 +48,7 @@ void fms_manual_run() {
 		break;
 	case MODE_3:
 		time_light2 = 3; // Display mode 3
+		updateClockBuffer();
 		blink_amber_led_2hz();
 		if(timer1_flag == 1) {
 			status = RED1_GREEN2;
@@ -63,6 +67,7 @@ void fms_manual_run() {
 		break;
 	case MODE_4:
 		time_light2 = 4; // Display mode 4
+		updateClockBuffer();
 		blink_green_led_2hz();
 		if(timer1_flag == 1) {
 			status = RED1_GREEN2;
