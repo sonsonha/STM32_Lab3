@@ -51,7 +51,7 @@ void fms_manual_run() {
 			setTimer1(3000);
 		}
 		if(isButton1_pressed() == 1) {
-			status = MODE_3;
+			status = MODE_4;
 			setTimer1(10000); // if button not pressed in 10s, status = auto
 			if(isButton2_pressed() == 1){
 				temp_duration_amber = temp_duration_amber - 1000;
@@ -69,7 +69,7 @@ void fms_manual_run() {
 			setTimer1(3000);
 		}
 		if(isButton1_pressed() == 1) {
-			status = MODE_3;
+			status = NORMAL_MODE;
 			setTimer1(10000); // if button not pressed in 10s, status = auto
 			if(isButton2_pressed() == 1){
 				temp_duration_green = temp_duration_green - 1000;

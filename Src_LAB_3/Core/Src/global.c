@@ -179,28 +179,37 @@ int led_buffer[4] = {0, 5, 0, 3};
 
 	void blink_red_led_2hz(){
 		if(timer4_flag == 1){
-			clearALL_light();
 			HAL_GPIO_TogglePin(RED_LED1_GPIO_Port, RED_LED1_Pin);
+			HAL_GPIO_WritePin(GREEN_LED1_GPIO_Port, GREEN_LED1_Pin, SET);
+			HAL_GPIO_WritePin(AMBER_LED1_GPIO_Port, AMBER_LED1_Pin, SET);
 			HAL_GPIO_TogglePin(RED_LED2_GPIO_Port, RED_LED2_Pin);
-			setTimer2(500);
+			HAL_GPIO_WritePin(GREEN_LED2_GPIO_Port, GREEN_LED2_Pin, SET);
+			HAL_GPIO_WritePin(AMBER_LED2_GPIO_Port,  AMBER_LED2_Pin, SET);
+			setTimer4(500);
 		}
 	}
 
 	void blink_green_led_2hz(){
 		if(timer4_flag == 1){
-			clearALL_light();
+			HAL_GPIO_WritePin(RED_LED1_GPIO_Port, RED_LED1_Pin, SET);
 			HAL_GPIO_TogglePin(GREEN_LED1_GPIO_Port, GREEN_LED1_Pin);
+			HAL_GPIO_WritePin(AMBER_LED1_GPIO_Port, AMBER_LED1_Pin, SET);
+			HAL_GPIO_WritePin(RED_LED2_GPIO_Port, RED_LED2_Pin, SET);
 			HAL_GPIO_TogglePin(GREEN_LED2_GPIO_Port, GREEN_LED2_Pin);
-			setTimer2(500);
+			HAL_GPIO_WritePin(AMBER_LED2_GPIO_Port,  AMBER_LED2_Pin, SET);
+			setTimer4(500);
 		}
 	}
 
 	void blink_amber_led_2hz(){
 		if(timer4_flag == 1){
-			clearALL_light();
+			HAL_GPIO_WritePin(RED_LED1_GPIO_Port, RED_LED1_Pin, SET);
+			HAL_GPIO_WritePin(GREEN_LED1_GPIO_Port, GREEN_LED1_Pin, SET);
 			HAL_GPIO_TogglePin(AMBER_LED1_GPIO_Port, AMBER_LED1_Pin);
-			HAL_GPIO_TogglePin(AMBER_LED2_GPIO_Port, AMBER_LED2_Pin);
-			setTimer2(500);
+			HAL_GPIO_WritePin(RED_LED2_GPIO_Port, RED_LED2_Pin, SET);
+			HAL_GPIO_WritePin(GREEN_LED2_GPIO_Port, GREEN_LED2_Pin, SET);
+			HAL_GPIO_TogglePin(AMBER_LED2_GPIO_Port,  AMBER_LED2_Pin);
+			setTimer4(500);
 		}
 	}
 
