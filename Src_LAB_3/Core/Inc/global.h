@@ -22,12 +22,21 @@
 
 #define NORMAL_MODE 22
 #define MODE_2 23
-#define MAN_AMBER 24
+#define MODE_3 24
+#define MODE_4 25
 
 extern int status;
 
 extern int time_light1;
 extern int time_light2;
+
+extern int duration_red;
+extern int duration_green;
+extern int  duration_amber;
+
+extern int temp_duration_red;
+extern int temp_duration_green;
+extern int temp_duration_amber;
 
 extern const int MAX_LED;
 extern int index_led;
@@ -38,5 +47,11 @@ void clearAll_7SEG();
 void update7SEG( int index);
 void updateClockBuffer();
 void clearALL_light();
+
+void blink_red_led_2hz();
+void blink_green_led_2hz();
+void blink_amber_led_2hz();
+
+void check_button3();
 
 #endif /* INC_GLOBAL_H_ */

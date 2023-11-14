@@ -14,6 +14,7 @@
 
 int flag = 0;
 
+
 //void led_7SEG_Run(){
 //	  if(timer3_flag == 1){
 //		  time_light1--;
@@ -83,7 +84,7 @@ void fmsRun(){
 	case INIT:
 		clearALL_light();
 		status = RED1_GREEN2;
-		setTimer1(3000);
+		setTimer1(duration_green);
 		break;
 	case RED1_GREEN2:
 		HAL_GPIO_WritePin(RED_LED2_GPIO_Port, RED_LED2_Pin, SET);
@@ -93,7 +94,7 @@ void fmsRun(){
 
 //		if(timer1_flag == 1)
 		if(timer1_flag == 1){
-			setTimer1(2000);
+			setTimer1(duration_amber);
 			status = RED1_AMBER2;
 //			updateClockBuffer();
 		}

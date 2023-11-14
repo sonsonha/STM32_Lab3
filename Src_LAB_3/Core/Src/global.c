@@ -14,6 +14,14 @@ int status = 1;
 const int MAX_LED = 4;
 int index_led = 0;
 
+int duration_red = 5000;
+int duration_green = 3000;
+int duration_amber = 2000;
+
+int temp_duration_red = 5000;
+int temp_duration_green = 3000;
+int temp_duration_amber = 2000;
+
 int time_light1 = 5;
 int time_light2 = 3;
 int led_buffer[4] = {0, 5, 0, 3};
@@ -167,6 +175,38 @@ int led_buffer[4] = {0, 5, 0, 3};
 		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
 		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, SET);
 		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, SET);
+	}
+
+	void blink_red_led_2hz(){
+		if(timer2_flag == 1){
+			HAL_GPIO_TogglePin(RED_LED1_GPIO_Port, RED_LED1_Pin);
+			HAL_GPIO_TogglePin(RED_LED2_GPIO_Port, RED_LED2_Pin);
+			setTimer2(50);
+		}
+	}
+
+	void blink_green_led_2hz(){
+		if(timer2_flag == 1){
+			HAL_GPIO_TogglePin(GREEN_LED1_GPIO_Port, GREEN_LED1_Pin);
+			HAL_GPIO_TogglePin(GREEN_LED2_GPIO_Port, GREEN_LED2_Pin);
+			setTimer2(50);
+		}
+	}
+
+	void blink_amber_led_2hz(){
+		if(timer2_flag == 1){
+			HAL_GPIO_TogglePin(AMBER_LED1_GPIO_Port, AMBER_LED1_Pin);
+			HAL_GPIO_TogglePin(AMBER_LED2_GPIO_Port, AMBER_LED2_Pin);
+			setTimer2(50);
+		}
+	}
+
+	void check_button3(){
+		if(isButton3_pressed()){
+			duration_red = temp_duration_red;
+			duration_green = temp_duration_green;
+			duration_amber = temp_duration_amber;
+		}
 	}
 
 

@@ -1,5 +1,9 @@
-global.c:21:7:display_7SEG	16	static
-global.c:116:7:update7SEG	16	static
-global.c:137:7:updateClockBuffer	4	static
-global.c:156:7:clearALL_light	8	static
-global.c:165:7:clearAll_7SEG	8	static
+global.c:29:7:display_7SEG	16	static
+global.c:124:7:update7SEG	16	static
+global.c:145:7:updateClockBuffer	4	static
+global.c:164:7:clearALL_light	8	static
+global.c:173:7:clearAll_7SEG	8	static
+global.c:180:7:blink_red_led_2hz	8	static
+global.c:188:7:blink_green_led_2hz	8	static
+global.c:196:7:blink_amber_led_2hz	8	static
+global.c:204:7:check_button3	8	static
