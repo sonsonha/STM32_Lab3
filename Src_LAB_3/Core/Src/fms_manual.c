@@ -27,6 +27,7 @@ void fms_manual_run() {
 		break;
 	case MODE_2:
 		time_light2 = 2; // Display mode in 2
+		blink_red_led_2hz();
 		if(timer1_flag == 1) {
 			status = RED1_GREEN2;
 			setTimer1(3000);
@@ -34,7 +35,6 @@ void fms_manual_run() {
 		if(isButton1_pressed() == 1) {
 			status = MODE_3;
 			setTimer1(10000); // if button not pressed in 10s, status = auto
-			blink_red_led_2hz();
 			if(isButton2_pressed() == 1){
 				temp_duration_red = temp_duration_red - 1000;
 			}
@@ -45,6 +45,7 @@ void fms_manual_run() {
 		break;
 	case MODE_3:
 		time_light2 = 3; // Display mode 3
+		blink_amber_led_2hz();
 		if(timer1_flag == 1) {
 			status = RED1_GREEN2;
 			setTimer1(3000);
@@ -52,7 +53,6 @@ void fms_manual_run() {
 		if(isButton1_pressed() == 1) {
 			status = MODE_3;
 			setTimer1(10000); // if button not pressed in 10s, status = auto
-			blink_amber_led_2hz();
 			if(isButton2_pressed() == 1){
 				temp_duration_amber = temp_duration_amber - 1000;
 			}
@@ -63,6 +63,7 @@ void fms_manual_run() {
 		break;
 	case MODE_4:
 		time_light2 = 4; // Display mode 4
+		blink_green_led_2hz();
 		if(timer1_flag == 1) {
 			status = RED1_GREEN2;
 			setTimer1(3000);
@@ -70,7 +71,6 @@ void fms_manual_run() {
 		if(isButton1_pressed() == 1) {
 			status = MODE_3;
 			setTimer1(10000); // if button not pressed in 10s, status = auto
-			blink_green_led_2hz();
 			if(isButton2_pressed() == 1){
 				temp_duration_green = temp_duration_green - 1000;
 			}

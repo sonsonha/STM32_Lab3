@@ -105,6 +105,7 @@ int main(void)
   time_light2 = 3;
   setTimer2(250);
   setTimer3(1000);
+  setTimer4(500);
 
   while (1)
   {
