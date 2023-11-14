@@ -1,5 +1,5 @@
-button.c:22:5:isButton1_pressed	4	static
-button.c:30:5:isButton2_pressed	4	static
-button.c:38:5:isButton3_pressed	4	static
-button.c:47:6:TODOfunc	4	static
-button.c:51:6:getKeyInput	8	static
+button.c:33:5:isButton1_pressed	4	static
+button.c:41:5:isButton2_pressed	4	static
+button.c:49:5:isButton3_pressed	4	static
+button.c:58:6:Button_pushed	16	static
+button.c:70:6:getKeyInput	8	static

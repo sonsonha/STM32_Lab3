@@ -108,7 +108,8 @@ int main(void)
 
   while (1)
   {
-		  fmsRun();
+	  fms_manual_run();
+	  fmsRun();
 //	  if(timer2_flag == 1){
 //		  setTimer2(25);
 ////			updateClockBuffer();
@@ -261,7 +262,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	timerRun();
-//	getKeyInput();
+	getKeyInput();
 }
 
 /* USER CODE END 4 */
