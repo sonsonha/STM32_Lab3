@@ -1,3 +1,4 @@
-fms_trafficLight.c:23:6:updateDisplayValues	4	static
-fms_trafficLight.c:34:6:updateClockBuffer	4	static
-fms_trafficLight.c:54:6:fmsRun	8	static
+fms_trafficLight.c:33:6:led_7SEG_Run	8	static
+fms_trafficLight.c:66:6:time_light_run	8	static
+fms_trafficLight.c:82:6:updateClockBuffer	4	static
+fms_trafficLight.c:102:6:fmsRun	8	static

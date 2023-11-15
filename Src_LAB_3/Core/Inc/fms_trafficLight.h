@@ -9,11 +9,10 @@
 #define INC_FMS_TRAFFICLIGHT_H_
 
 void fmsRun();
-
 void led_7SEG_Run();
-
 void updateClockBuffer();
-
 void updateDisplayValues();
+void time_light_run();
+
 
 #endif /* INC_FMS_TRAFFICLIGHT_H_ */

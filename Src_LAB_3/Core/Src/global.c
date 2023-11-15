@@ -14,13 +14,15 @@ int status = 1;
 const int MAX_LED = 4;
 int index_led = 0;
 
-int duration_red = 5000;
-int duration_green = 3000;
-int duration_amber = 2000;
+int duration_red;
+int duration_green;
+int duration_amber;
 
 int temp_duration_red = 5000;
 int temp_duration_green = 3000;
 int temp_duration_amber = 2000;
+
+int num_MODE = 2;
 
 
 	void display_7SEG(int num){
@@ -220,7 +222,7 @@ int temp_duration_amber = 2000;
 
 	int check_valid_duration(){
 		int total = duration_amber + duration_green;
-		if(!(duration_red = total)){
+		if(!(duration_red = total) || !(duration_green >= duration_amber)){
 			return 0;
 		}
 		return 1;

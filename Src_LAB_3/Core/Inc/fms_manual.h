@@ -11,5 +11,8 @@
 #include "global.h"
 
 void fms_manual_run();
+void update_time_light_changed();
+void clear_light_buffer();
+
 
 #endif /* INC_FMS_MANUAL_H_ */

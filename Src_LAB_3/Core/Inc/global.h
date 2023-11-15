@@ -38,10 +38,13 @@ extern int temp_duration_red;
 extern int temp_duration_green;
 extern int temp_duration_amber;
 
+extern int num_MODE;
 
 extern const int MAX_LED;
 extern int index_led;
 extern int led_buffer[4];
+
+extern int duration_changed_buffer[3];
 
 void display_7SEG(int num);
 void clearAll_7SEG();
