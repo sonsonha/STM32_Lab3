@@ -101,8 +101,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 
   status = INIT;
-  time_light1 = 5;
-  time_light2 = 3;
+//  time_light1 = duration_red/1000;
+//  time_light2 = duration_green/1000;
   setTimer2(250);
   setTimer3(1000);
   setTimer4(500);

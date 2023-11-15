@@ -6,6 +6,8 @@
  */
 
 #include "fms_manual.h"
+#include "fms_trafficLight.h"
+
 
 
 void fms_manual_run() {
@@ -28,7 +30,7 @@ void fms_manual_run() {
 		}
 		break;
 	case MODE_2:
-		time_light2 = 2; // Display mode in 2
+		display_led2 = 2; // Display mode in 2
 		updateClockBuffer();
 		blink_red_led_2hz();
 		if(timer1_flag == 1) {
@@ -47,7 +49,7 @@ void fms_manual_run() {
 		}
 		break;
 	case MODE_3:
-		time_light2 = 3; // Display mode 3
+		display_led2 = 3; // Display mode 3
 		updateClockBuffer();
 		blink_amber_led_2hz();
 		if(timer1_flag == 1) {
@@ -66,7 +68,7 @@ void fms_manual_run() {
 		}
 		break;
 	case MODE_4:
-		time_light2 = 4; // Display mode 4
+		display_led2 = 4; // Display mode 4
 		updateClockBuffer();
 		blink_green_led_2hz();
 		if(timer1_flag == 1) {

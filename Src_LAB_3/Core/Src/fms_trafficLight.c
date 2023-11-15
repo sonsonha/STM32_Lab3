@@ -14,31 +14,41 @@
 
 int flag = 0;
 
+// Định nghĩa các biến toàn cục mới
+int display_led1, display_led2;
+int duration_amber = 2000;
+int duration_red = 5000;
 
-//void led_7SEG_Run(){
-//	  if(timer3_flag == 1){
-//		  time_light1--;
-//		  time_light2--;
-////		  (status == RED1_AMBER2)
-//		  if(status == RED1_AMBER2){
-//			  time_light2 = 2;
-//		  }
-//		  if((status == GREEN1_RED2)){
-//			  time_light1 = 3;
-//			  time_light2 = 5;
-//		  }
-//		  if((status == AMBER1_RED2)){
-//			  time_light1 = 2;
-//		  }
-//		  if((status == RED1_GREEN2)){
-//			  time_light1 = 5;
-//			  time_light2 = 3;
-//		  }
-//
-//		  updateClockBuffer();
-//		  setTimer3(1000);
-//	  }
-//}
+// Hàm mới để cập nhật display_led1 và display_led2
+void updateDisplayValues() {
+    display_led1 = duration_red / 1000;
+    display_led2 = duration_green / 1000;
+
+    // Thực hiện kiểm tra và cập nhật theo logic của bạn
+    // ...
+}
+int led_buffer[4] = {0, 5, 0, 3};
+
+
+
+void updateClockBuffer() {
+	led_buffer[0] = display_led1/10;
+	led_buffer[1] = display_led1%10;
+	led_buffer[2] = display_led2/10;
+	led_buffer[3] = display_led2%10;
+
+	// Display value 0 on the 1st led 7 segment if time light has 1 digit
+	if (display_led1 <= 9) {
+		led_buffer[0] = 0;
+		led_buffer[1] = display_led1;
+	}
+
+	// Display value 0 on the 3rd led 7 segment if time light has 1 digit
+	if (display_led2 <= 9) {
+		led_buffer[2] = 0;
+		led_buffer[3] = display_led2;
+	}
+}
 
 
 void fmsRun(){
@@ -57,29 +67,29 @@ void fmsRun(){
 
 	  if(timer3_flag == 1){
 		  if(!isButton1_pressed()){
-			  time_light1--;
-			  time_light2--;
+			  display_led1--;
+			  display_led2--;
 		  }
 		  else{
-			  time_light1--;
-			  time_light2 = 2;
+			  display_led1--;
+			  display_led2 = 2;
 		  }
 //		  (status == RED1_AMBER2)
-		  if((time_light2 <= 0) && (time_light1 > 0)){
-			  time_light2 = 2;
+		  if((display_led2 <= 0) && (display_led1 > 0)){
+			  display_led2 = 2;
 		  }
-		  if((time_light1 <= 0) && (time_light2 <= 0) && (flag == 0)){
+		  if((display_led1 <= 0) && (display_led2 <= 0) && (flag == 0)){
 			  flag = 1;
-			  time_light1 = 3;
-			  time_light2 = 5;
+			  display_led1 = 3;
+			  display_led2 = 5;
 		  }
-		  if((time_light1 <= 0) && (time_light2 > 0)){
-			  time_light1 = 2;
+		  if((display_led1 <= 0) && (display_led2 > 0)){
+			  display_led1 = 2;
 		  }
-		  if((time_light1 <= 0) && (time_light2 <= 0) && (flag == 1)){
+		  if((display_led1 <= 0) && (display_led2 <= 0) && (flag == 1)){
 			  flag = 0;
-			  time_light1 = 5;
-			  time_light2 = 3;
+			  display_led1 = 5;
+			  display_led2 = 3;
 		  }
 
 		  updateClockBuffer();

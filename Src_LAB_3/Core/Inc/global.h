@@ -27,8 +27,8 @@
 
 extern int status;
 
-extern int time_light1;
-extern int time_light2;
+extern int display_led1;
+extern int display_led2;
 
 extern int duration_red;
 extern int duration_green;
@@ -37,6 +37,7 @@ extern int  duration_amber;
 extern int temp_duration_red;
 extern int temp_duration_green;
 extern int temp_duration_amber;
+
 
 extern const int MAX_LED;
 extern int index_led;

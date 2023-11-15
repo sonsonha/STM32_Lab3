@@ -22,9 +22,6 @@ int temp_duration_red = 5000;
 int temp_duration_green = 3000;
 int temp_duration_amber = 2000;
 
-int time_light1 = 5;
-int time_light2 = 3;
-int led_buffer[4] = {0, 5, 0, 3};
 
 	void display_7SEG(int num){
 			switch (num) {
@@ -142,24 +139,24 @@ int led_buffer[4] = {0, 5, 0, 3};
 		}
 	}
 
-	void updateClockBuffer() {
-		led_buffer[0] = time_light1/10;
-		led_buffer[1] = time_light1%10;
-		led_buffer[2] = time_light2/10;
-		led_buffer[3] = time_light2%10;
-
-		// Display value 0 on the 1st led 7 segment if time light has 1 digit
-		if (time_light1 <= 9) {
-			led_buffer[0] = 0;
-			led_buffer[1] = time_light1;
-		}
-
-		// Display value 0 on the 3rd led 7 segment if time light has 1 digit
-		if (time_light2 <= 9) {
-			led_buffer[2] = 0;
-			led_buffer[3] = time_light2;
-		}
-	}
+//	void updateClockBuffer() {
+//		led_buffer[0] = display_led1/10;
+//		led_buffer[1] = display_led1%10;
+//		led_buffer[2] = display_led2/10;
+//		led_buffer[3] = display_led2%10;
+//
+//		// Display value 0 on the 1st led 7 segment if time light has 1 digit
+//		if (display_led1 <= 9) {
+//			led_buffer[0] = 0;
+//			led_buffer[1] = display_led1;
+//		}
+//
+//		// Display value 0 on the 3rd led 7 segment if time light has 1 digit
+//		if (display_led2 <= 9) {
+//			led_buffer[2] = 0;
+//			led_buffer[3] = display_led2;
+//		}
+//	}
 
 	void clearALL_light(){
 		HAL_GPIO_WritePin(RED_LED1_GPIO_Port, RED_LED1_Pin, SET);
